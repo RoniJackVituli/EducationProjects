@@ -1,10 +1,5 @@
 %{
 
-	/* 
-	315369967 - Roni Jack Vituli
-    209467281 - Haim Rubin
-    315585505 - Matan Fadida
-    */
 
 	#include <string.h>
 	#include <stdlib.h>
