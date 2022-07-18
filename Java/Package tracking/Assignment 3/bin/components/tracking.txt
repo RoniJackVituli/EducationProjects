@@ -1,0 +1,294 @@
+1) SmallPackage [packageID = 1000, priority = HIGHT, status = CREATION, senderAddress = 4-863210, destinationAddress = 3-1026785, acknowledge=true]
+
+2) StandardPackage [packageID = 1001, priority = HIGHT, status = CREATION, senderAddress = 1-963212, destinationAddress = 2-556598, weight=5.112423896789551]
+
+3) SmallPackage [packageID = 1002, priority = LOW, status = CREATION, senderAddress = 4-863210, destinationAddress = 3-499054, acknowledge=false]
+
+4) StandardPackage [packageID = 1003, priority = LOW, status = CREATION, senderAddress = 2-946066, destinationAddress = 3-1039349, weight=6.1122307777404785]
+
+5) NonStandardPackage [packageID = 1004, priority = HIGHT, status = CREATION, senderAddress = 0-230557, destinationAddress = 3-1076588, width=615, length=230, height=41]
+
+6) StandardPackage [packageID = 1005, priority = LOW, status = CREATION, senderAddress = 2-524464, destinationAddress = 0-975850, weight=3.6310720443725586]
+
+7) SmallPackage [packageID = 1006, priority = STANDARD, status = CREATION, senderAddress = 1-694747, destinationAddress = 0-708115, acknowledge=true]
+
+8) SmallPackage [packageID = 1007, priority = HIGHT, status = CREATION, senderAddress = 1-963212, destinationAddress = 0-437045, acknowledge=true]
+
+9) StandardPackage [packageID = 1008, priority = HIGHT, status = CREATION, senderAddress = 4-894887, destinationAddress = 2-530368, weight=1.4983911514282227]
+
+10) StandardPackage [packageID = 1009, priority = STANDARD, status = CREATION, senderAddress = 3-230557, destinationAddress = 1-388356, weight=4.6790452003479]
+
+11) NonStandardPackage [packageID = 1010, priority = STANDARD, status = CREATION, senderAddress = 0-714820, destinationAddress = 4-992070, width=642, length=460, height=285]
+
+12) SmallPackage [packageID = 1011, priority = LOW, status = CREATION, senderAddress = 2-442931, destinationAddress = 4-590239, acknowledge=true]
+
+13) NonStandardPackage [packageID = 1012, priority = STANDARD, status = CREATION, senderAddress = 4-442931, destinationAddress = 4-245506, width=952, length=269, height=198]
+
+14) StandardPackage [packageID = 1013, priority = LOW, status = CREATION, senderAddress = 0-694747, destinationAddress = 3-179942, weight=6.954909801483154]
+
+15) NonStandardPackage [packageID = 1014, priority = LOW, status = CREATION, senderAddress = 2-946066, destinationAddress = 0-623835, width=818, length=425, height=115]
+
+16) NonStandardPackage [packageID = 1015, priority = STANDARD, status = CREATION, senderAddress = 3-524464, destinationAddress = 4-725540, width=913, length=223, height=63]
+
+17) StandardPackage [packageID = 1016, priority = STANDARD, status = CREATION, senderAddress = 4-714820, destinationAddress = 1-512345, weight=2.2238616943359375]
+
+18) SmallPackage [packageID = 1017, priority = HIGHT, status = CREATION, senderAddress = 0-110040, destinationAddress = 1-840319, acknowledge=false]
+
+19) NonStandardPackage [packageID = 1018, priority = HIGHT, status = CREATION, senderAddress = 2-894887, destinationAddress = 1-716150, width=104, length=366, height=196]
+
+20) StandardPackage [packageID = 1019, priority = LOW, status = CREATION, senderAddress = 3-110040, destinationAddress = 2-777833, weight=2.1024763584136963]
+
+21) StandardPackage [packageID = 1020, priority = HIGHT, status = CREATION, senderAddress = 1-963212, destinationAddress = 3-638054, weight=1.2978708744049072]
+
+22) StandardPackage [packageID = 1021, priority = STANDARD, status = CREATION, senderAddress = 0-863210, destinationAddress = 4-1041012, weight=5.405028343200684]
+
+23) SmallPackage [packageID = 1000, priority = HIGHT, status = BRANCH_STORAGE, senderAddress = 4-863210, destinationAddress = 3-1026785, acknowledge=true]
+
+24) SmallPackage [packageID = 1002, priority = LOW, status = BRANCH_STORAGE, senderAddress = 4-863210, destinationAddress = 3-499054, acknowledge=false]
+
+25) StandardPackage [packageID = 1022, priority = HIGHT, status = CREATION, senderAddress = 3-894887, destinationAddress = 0-684180, weight=5.732404708862305]
+
+26) StandardPackage [packageID = 1023, priority = HIGHT, status = CREATION, senderAddress = 3-694747, destinationAddress = 3-887441, weight=2.7571775913238525]
+
+27) StandardPackage [packageID = 1024, priority = STANDARD, status = CREATION, senderAddress = 4-442931, destinationAddress = 4-185365, weight=7.723353385925293]
+
+28) NonStandardPackage [packageID = 1025, priority = LOW, status = CREATION, senderAddress = 4-230557, destinationAddress = 4-986802, width=921, length=217, height=364]
+
+29) StandardPackage [packageID = 1026, priority = HIGHT, status = CREATION, senderAddress = 4-230557, destinationAddress = 3-720844, weight=8.396913528442383]
+
+30) NonStandardPackage [packageID = 1027, priority = LOW, status = CREATION, senderAddress = 2-714820, destinationAddress = 2-726362, width=462, length=423, height=337]
+
+31) SmallPackage [packageID = 1028, priority = HIGHT, status = CREATION, senderAddress = 3-442931, destinationAddress = 1-562785, acknowledge=false]
+
+32) NonStandardPackage [packageID = 1029, priority = STANDARD, status = CREATION, senderAddress = 0-946066, destinationAddress = 2-519158, width=859, length=469, height=98]
+
+33) StandardPackage [packageID = 1030, priority = HIGHT, status = CREATION, senderAddress = 4-863210, destinationAddress = 2-467417, weight=1.3494060039520264]
+
+34) StandardPackage [packageID = 1031, priority = LOW, status = CREATION, senderAddress = 1-524464, destinationAddress = 3-620284, weight=3.5056049823760986]
+
+35) SmallPackage [packageID = 1032, priority = HIGHT, status = CREATION, senderAddress = 4-524464, destinationAddress = 0-740395, acknowledge=false]
+
+36) StandardPackage [packageID = 1033, priority = HIGHT, status = CREATION, senderAddress = 0-694747, destinationAddress = 0-465591, weight=1.0549509525299072]
+
+37) StandardPackage [packageID = 1034, priority = HIGHT, status = CREATION, senderAddress = 2-963212, destinationAddress = 4-925026, weight=7.9309401512146]
+
+38) StandardPackage [packageID = 1016, priority = STANDARD, status = BRANCH_STORAGE, senderAddress = 4-714820, destinationAddress = 1-512345, weight=2.2238616943359375]
+
+39) NonStandardPackage [packageID = 1035, priority = HIGHT, status = CREATION, senderAddress = 3-894887, destinationAddress = 1-1048839, width=585, length=324, height=172]
+
+40) SmallPackage [packageID = 1017, priority = HIGHT, status = BRANCH_STORAGE, senderAddress = 0-110040, destinationAddress = 1-840319, acknowledge=false]
+
+41) StandardPackage [packageID = 1036, priority = LOW, status = CREATION, senderAddress = 1-110040, destinationAddress = 4-139193, weight=5.848516464233398]
+
+42) StandardPackage [packageID = 1019, priority = LOW, status = BRANCH_STORAGE, senderAddress = 3-110040, destinationAddress = 2-777833, weight=2.1024763584136963]
+
+43) NonStandardPackage [packageID = 1037, priority = LOW, status = CREATION, senderAddress = 3-963212, destinationAddress = 0-242625, width=481, length=363, height=59]
+
+44) StandardPackage [packageID = 1021, priority = STANDARD, status = BRANCH_STORAGE, senderAddress = 0-863210, destinationAddress = 4-1041012, weight=5.405028343200684]
+
+45) NonStandardPackage [packageID = 1038, priority = STANDARD, status = CREATION, senderAddress = 2-230557, destinationAddress = 3-650517, width=219, length=316, height=77]
+
+46) NonStandardPackage [packageID = 1039, priority = HIGHT, status = CREATION, senderAddress = 2-714820, destinationAddress = 4-401519, width=769, length=270, height=169]
+
+47) SmallPackage [packageID = 1040, priority = HIGHT, status = CREATION, senderAddress = 2-946066, destinationAddress = 3-443791, acknowledge=false]
+
+48) NonStandardPackage [packageID = 1041, priority = LOW, status = CREATION, senderAddress = 4-946066, destinationAddress = 2-1029039, width=592, length=32, height=196]
+
+49) NonStandardPackage [packageID = 1042, priority = LOW, status = CREATION, senderAddress = 3-894887, destinationAddress = 2-156583, width=477, length=191, height=229]
+
+50) SmallPackage [packageID = 1043, priority = STANDARD, status = CREATION, senderAddress = 1-863210, destinationAddress = 3-909205, acknowledge=false]
+
+51) SmallPackage [packageID = 1044, priority = LOW, status = CREATION, senderAddress = 2-110040, destinationAddress = 4-336986, acknowledge=true]
+
+52) StandardPackage [packageID = 1045, priority = LOW, status = CREATION, senderAddress = 4-694747, destinationAddress = 0-786755, weight=6.971689224243164]
+
+53) StandardPackage [packageID = 1030, priority = HIGHT, status = BRANCH_STORAGE, senderAddress = 4-863210, destinationAddress = 2-467417, weight=1.3494060039520264]
+
+54) SmallPackage [packageID = 1011, priority = LOW, status = BRANCH_STORAGE, senderAddress = 2-442931, destinationAddress = 4-590239, acknowledge=true]
+
+55) SmallPackage [packageID = 1046, priority = STANDARD, status = CREATION, senderAddress = 4-524464, destinationAddress = 2-1088306, acknowledge=false]
+
+56) NonStandardPackage [packageID = 1047, priority = LOW, status = CREATION, senderAddress = 2-442931, destinationAddress = 4-164452, width=278, length=412, height=298]
+
+57) SmallPackage [packageID = 1048, priority = LOW, status = CREATION, senderAddress = 0-714820, destinationAddress = 1-921147, acknowledge=false]
+
+58) StandardPackage [packageID = 1001, priority = HIGHT, status = BRANCH_STORAGE, senderAddress = 1-963212, destinationAddress = 2-556598, weight=5.112423896789551]
+
+59) StandardPackage [packageID = 1024, priority = STANDARD, status = BRANCH_STORAGE, senderAddress = 4-442931, destinationAddress = 4-185365, weight=7.723353385925293]
+
+60) SmallPackage [packageID = 1007, priority = HIGHT, status = BRANCH_STORAGE, senderAddress = 1-963212, destinationAddress = 0-437045, acknowledge=true]
+
+61) SmallPackage [packageID = 1017, priority = HIGHT, status = HUB_TRANSPORT, senderAddress = 0-110040, destinationAddress = 1-840319, acknowledge=false]
+
+62) StandardPackage [packageID = 1021, priority = STANDARD, status = HUB_TRANSPORT, senderAddress = 0-863210, destinationAddress = 4-1041012, weight=5.405028343200684]
+
+63) SmallPackage [packageID = 1028, priority = HIGHT, status = BRANCH_STORAGE, senderAddress = 3-442931, destinationAddress = 1-562785, acknowledge=false]
+
+64) NonStandardPackage [packageID = 1049, priority = STANDARD, status = CREATION, senderAddress = 4-110040, destinationAddress = 4-332561, width=101, length=3, height=313]
+
+65) SmallPackage [packageID = 1044, priority = LOW, status = BRANCH_STORAGE, senderAddress = 2-110040, destinationAddress = 4-336986, acknowledge=true]
+
+66) SmallPackage [packageID = 1048, priority = LOW, status = BRANCH_STORAGE, senderAddress = 0-714820, destinationAddress = 1-921147, acknowledge=false]
+
+67) StandardPackage [packageID = 1020, priority = HIGHT, status = BRANCH_STORAGE, senderAddress = 1-963212, destinationAddress = 3-638054, weight=1.2978708744049072]
+
+68) SmallPackage [packageID = 1043, priority = STANDARD, status = BRANCH_STORAGE, senderAddress = 1-863210, destinationAddress = 3-909205, acknowledge=false]
+
+69) StandardPackage [packageID = 1036, priority = LOW, status = BRANCH_STORAGE, senderAddress = 1-110040, destinationAddress = 4-139193, weight=5.848516464233398]
+
+70) StandardPackage [packageID = 1034, priority = HIGHT, status = BRANCH_STORAGE, senderAddress = 2-963212, destinationAddress = 4-925026, weight=7.9309401512146]
+
+71) StandardPackage [packageID = 1005, priority = LOW, status = BRANCH_STORAGE, senderAddress = 2-524464, destinationAddress = 0-975850, weight=3.6310720443725586]
+
+72) StandardPackage [packageID = 1001, priority = HIGHT, status = HUB_TRANSPORT, senderAddress = 1-963212, destinationAddress = 2-556598, weight=5.112423896789551]
+
+73) SmallPackage [packageID = 1007, priority = HIGHT, status = HUB_TRANSPORT, senderAddress = 1-963212, destinationAddress = 0-437045, acknowledge=true]
+
+74) StandardPackage [packageID = 1020, priority = HIGHT, status = HUB_TRANSPORT, senderAddress = 1-963212, destinationAddress = 3-638054, weight=1.2978708744049072]
+
+75) StandardPackage [packageID = 1036, priority = LOW, status = HUB_TRANSPORT, senderAddress = 1-110040, destinationAddress = 4-139193, weight=5.848516464233398]
+
+76) SmallPackage [packageID = 1043, priority = STANDARD, status = HUB_TRANSPORT, senderAddress = 1-863210, destinationAddress = 3-909205, acknowledge=false]
+
+77) SmallPackage [packageID = 1017, priority = HIGHT, status = HUB_STORAGE, senderAddress = 0-110040, destinationAddress = 1-840319, acknowledge=false]
+
+78) StandardPackage [packageID = 1021, priority = STANDARD, status = HUB_STORAGE, senderAddress = 0-863210, destinationAddress = 4-1041012, weight=5.405028343200684]
+
+79) StandardPackage [packageID = 1031, priority = LOW, status = BRANCH_STORAGE, senderAddress = 1-524464, destinationAddress = 3-620284, weight=3.5056049823760986]
+
+80) SmallPackage [packageID = 1032, priority = HIGHT, status = BRANCH_STORAGE, senderAddress = 4-524464, destinationAddress = 0-740395, acknowledge=false]
+
+81) StandardPackage [packageID = 1003, priority = LOW, status = BRANCH_STORAGE, senderAddress = 2-946066, destinationAddress = 3-1039349, weight=6.1122307777404785]
+
+82) StandardPackage [packageID = 1003, priority = LOW, status = HUB_TRANSPORT, senderAddress = 2-946066, destinationAddress = 3-1039349, weight=6.1122307777404785]
+
+83) StandardPackage [packageID = 1005, priority = LOW, status = HUB_TRANSPORT, senderAddress = 2-524464, destinationAddress = 0-975850, weight=3.6310720443725586]
+
+84) SmallPackage [packageID = 1011, priority = LOW, status = HUB_TRANSPORT, senderAddress = 2-442931, destinationAddress = 4-590239, acknowledge=true]
+
+85) StandardPackage [packageID = 1034, priority = HIGHT, status = HUB_TRANSPORT, senderAddress = 2-963212, destinationAddress = 4-925026, weight=7.9309401512146]
+
+86) SmallPackage [packageID = 1044, priority = LOW, status = HUB_TRANSPORT, senderAddress = 2-110040, destinationAddress = 4-336986, acknowledge=true]
+
+87) NonStandardPackage [packageID = 1004, priority = HIGHT, status = DISTRIBUTION, senderAddress = 0-230557, destinationAddress = 3-1076588, width=615, length=230, height=41]
+
+88) SmallPackage [packageID = 1046, priority = STANDARD, status = BRANCH_STORAGE, senderAddress = 4-524464, destinationAddress = 2-1088306, acknowledge=false]
+
+89) SmallPackage [packageID = 1006, priority = STANDARD, status = BRANCH_STORAGE, senderAddress = 1-694747, destinationAddress = 0-708115, acknowledge=true]
+
+90) StandardPackage [packageID = 1001, priority = HIGHT, status = HUB_STORAGE, senderAddress = 1-963212, destinationAddress = 2-556598, weight=5.112423896789551]
+
+91) SmallPackage [packageID = 1000, priority = HIGHT, status = HUB_TRANSPORT, senderAddress = 4-863210, destinationAddress = 3-1026785, acknowledge=true]
+
+92) StandardPackage [packageID = 1019, priority = LOW, status = HUB_TRANSPORT, senderAddress = 3-110040, destinationAddress = 2-777833, weight=2.1024763584136963]
+
+93) SmallPackage [packageID = 1002, priority = LOW, status = HUB_TRANSPORT, senderAddress = 4-863210, destinationAddress = 3-499054, acknowledge=false]
+
+94) SmallPackage [packageID = 1007, priority = HIGHT, status = HUB_STORAGE, senderAddress = 1-963212, destinationAddress = 0-437045, acknowledge=true]
+
+95) StandardPackage [packageID = 1016, priority = STANDARD, status = HUB_TRANSPORT, senderAddress = 4-714820, destinationAddress = 1-512345, weight=2.2238616943359375]
+
+96) SmallPackage [packageID = 1028, priority = HIGHT, status = HUB_TRANSPORT, senderAddress = 3-442931, destinationAddress = 1-562785, acknowledge=false]
+
+97) StandardPackage [packageID = 1024, priority = STANDARD, status = HUB_TRANSPORT, senderAddress = 4-442931, destinationAddress = 4-185365, weight=7.723353385925293]
+
+98) StandardPackage [packageID = 1020, priority = HIGHT, status = HUB_STORAGE, senderAddress = 1-963212, destinationAddress = 3-638054, weight=1.2978708744049072]
+
+99) StandardPackage [packageID = 1030, priority = HIGHT, status = HUB_TRANSPORT, senderAddress = 4-863210, destinationAddress = 2-467417, weight=1.3494060039520264]
+
+100) StandardPackage [packageID = 1036, priority = LOW, status = HUB_STORAGE, senderAddress = 1-110040, destinationAddress = 4-139193, weight=5.848516464233398]
+
+101) SmallPackage [packageID = 1032, priority = HIGHT, status = HUB_TRANSPORT, senderAddress = 4-524464, destinationAddress = 0-740395, acknowledge=false]
+
+102) SmallPackage [packageID = 1043, priority = STANDARD, status = HUB_STORAGE, senderAddress = 1-863210, destinationAddress = 3-909205, acknowledge=false]
+
+103) SmallPackage [packageID = 1046, priority = STANDARD, status = HUB_TRANSPORT, senderAddress = 4-524464, destinationAddress = 2-1088306, acknowledge=false]
+
+104) SmallPackage [packageID = 1017, priority = HIGHT, status = BRANCH_TRANSPORT, senderAddress = 0-110040, destinationAddress = 1-840319, acknowledge=false]
+
+105) StandardPackage [packageID = 1008, priority = HIGHT, status = BRANCH_STORAGE, senderAddress = 4-894887, destinationAddress = 2-530368, weight=1.4983911514282227]
+
+106) StandardPackage [packageID = 1009, priority = STANDARD, status = BRANCH_STORAGE, senderAddress = 3-230557, destinationAddress = 1-388356, weight=4.6790452003479]
+
+107) StandardPackage [packageID = 1013, priority = LOW, status = BRANCH_STORAGE, senderAddress = 0-694747, destinationAddress = 3-179942, weight=6.954909801483154]
+
+108) StandardPackage [packageID = 1022, priority = HIGHT, status = BRANCH_STORAGE, senderAddress = 3-894887, destinationAddress = 0-684180, weight=5.732404708862305]
+
+109) SmallPackage [packageID = 1040, priority = HIGHT, status = BRANCH_STORAGE, senderAddress = 2-946066, destinationAddress = 3-443791, acknowledge=false]
+
+110) StandardPackage [packageID = 1023, priority = HIGHT, status = BRANCH_STORAGE, senderAddress = 3-694747, destinationAddress = 3-887441, weight=2.7571775913238525]
+
+111) NonStandardPackage [packageID = 1004, priority = HIGHT, status = DELIVERED, senderAddress = 0-230557, destinationAddress = 3-1076588, width=615, length=230, height=41]
+
+112) StandardPackage [packageID = 1026, priority = HIGHT, status = BRANCH_STORAGE, senderAddress = 4-230557, destinationAddress = 3-720844, weight=8.396913528442383]
+
+113) StandardPackage [packageID = 1019, priority = LOW, status = HUB_STORAGE, senderAddress = 3-110040, destinationAddress = 2-777833, weight=2.1024763584136963]
+
+114) SmallPackage [packageID = 1028, priority = HIGHT, status = HUB_STORAGE, senderAddress = 3-442931, destinationAddress = 1-562785, acknowledge=false]
+
+115) StandardPackage [packageID = 1001, priority = HIGHT, status = BRANCH_TRANSPORT, senderAddress = 1-963212, destinationAddress = 2-556598, weight=5.112423896789551]
+
+116) StandardPackage [packageID = 1019, priority = LOW, status = BRANCH_TRANSPORT, senderAddress = 3-110040, destinationAddress = 2-777833, weight=2.1024763584136963]
+
+117) StandardPackage [packageID = 1033, priority = HIGHT, status = BRANCH_STORAGE, senderAddress = 0-694747, destinationAddress = 0-465591, weight=1.0549509525299072]
+
+118) NonStandardPackage [packageID = 1010, priority = STANDARD, status = DISTRIBUTION, senderAddress = 0-714820, destinationAddress = 4-992070, width=642, length=460, height=285]
+
+119) SmallPackage [packageID = 1000, priority = HIGHT, status = HUB_STORAGE, senderAddress = 4-863210, destinationAddress = 3-1026785, acknowledge=true]
+
+120) SmallPackage [packageID = 1002, priority = LOW, status = HUB_STORAGE, senderAddress = 4-863210, destinationAddress = 3-499054, acknowledge=false]
+
+121) StandardPackage [packageID = 1016, priority = STANDARD, status = HUB_STORAGE, senderAddress = 4-714820, destinationAddress = 1-512345, weight=2.2238616943359375]
+
+122) StandardPackage [packageID = 1024, priority = STANDARD, status = HUB_STORAGE, senderAddress = 4-442931, destinationAddress = 4-185365, weight=7.723353385925293]
+
+123) StandardPackage [packageID = 1030, priority = HIGHT, status = HUB_STORAGE, senderAddress = 4-863210, destinationAddress = 2-467417, weight=1.3494060039520264]
+
+124) SmallPackage [packageID = 1032, priority = HIGHT, status = HUB_STORAGE, senderAddress = 4-524464, destinationAddress = 0-740395, acknowledge=false]
+
+125) SmallPackage [packageID = 1046, priority = STANDARD, status = HUB_STORAGE, senderAddress = 4-524464, destinationAddress = 2-1088306, acknowledge=false]
+
+126) StandardPackage [packageID = 1020, priority = HIGHT, status = BRANCH_TRANSPORT, senderAddress = 1-963212, destinationAddress = 3-638054, weight=1.2978708744049072]
+
+127) SmallPackage [packageID = 1043, priority = STANDARD, status = BRANCH_TRANSPORT, senderAddress = 1-863210, destinationAddress = 3-909205, acknowledge=false]
+
+128) SmallPackage [packageID = 1000, priority = HIGHT, status = BRANCH_TRANSPORT, senderAddress = 4-863210, destinationAddress = 3-1026785, acknowledge=true]
+
+129) SmallPackage [packageID = 1002, priority = LOW, status = BRANCH_TRANSPORT, senderAddress = 4-863210, destinationAddress = 3-499054, acknowledge=false]
+
+130) StandardPackage [packageID = 1045, priority = LOW, status = BRANCH_STORAGE, senderAddress = 4-694747, destinationAddress = 0-786755, weight=6.971689224243164]
+
+131) NonStandardPackage [packageID = 1010, priority = STANDARD, status = DELIVERED, senderAddress = 0-714820, destinationAddress = 4-992070, width=642, length=460, height=285]
+
+132) StandardPackage [packageID = 1013, priority = LOW, status = HUB_TRANSPORT, senderAddress = 0-694747, destinationAddress = 3-179942, weight=6.954909801483154]
+
+133) StandardPackage [packageID = 1033, priority = HIGHT, status = HUB_TRANSPORT, senderAddress = 0-694747, destinationAddress = 0-465591, weight=1.0549509525299072]
+
+134) SmallPackage [packageID = 1048, priority = LOW, status = HUB_TRANSPORT, senderAddress = 0-714820, destinationAddress = 1-921147, acknowledge=false]
+
+135) NonStandardPackage [packageID = 1012, priority = STANDARD, status = DISTRIBUTION, senderAddress = 4-442931, destinationAddress = 4-245506, width=952, length=269, height=198]
+
+136) StandardPackage [packageID = 1003, priority = LOW, status = HUB_STORAGE, senderAddress = 2-946066, destinationAddress = 3-1039349, weight=6.1122307777404785]
+
+137) StandardPackage [packageID = 1005, priority = LOW, status = HUB_STORAGE, senderAddress = 2-524464, destinationAddress = 0-975850, weight=3.6310720443725586]
+
+138) SmallPackage [packageID = 1011, priority = LOW, status = HUB_STORAGE, senderAddress = 2-442931, destinationAddress = 4-590239, acknowledge=true]
+
+139) StandardPackage [packageID = 1034, priority = HIGHT, status = HUB_STORAGE, senderAddress = 2-963212, destinationAddress = 4-925026, weight=7.9309401512146]
+
+140) SmallPackage [packageID = 1044, priority = LOW, status = HUB_STORAGE, senderAddress = 2-110040, destinationAddress = 4-336986, acknowledge=true]
+
+141) StandardPackage [packageID = 1021, priority = STANDARD, status = BRANCH_TRANSPORT, senderAddress = 0-863210, destinationAddress = 4-1041012, weight=5.405028343200684]
+
+142) StandardPackage [packageID = 1036, priority = LOW, status = BRANCH_TRANSPORT, senderAddress = 1-110040, destinationAddress = 4-139193, weight=5.848516464233398]
+
+143) StandardPackage [packageID = 1024, priority = STANDARD, status = BRANCH_TRANSPORT, senderAddress = 4-442931, destinationAddress = 4-185365, weight=7.723353385925293]
+
+144) SmallPackage [packageID = 1011, priority = LOW, status = BRANCH_TRANSPORT, senderAddress = 2-442931, destinationAddress = 4-590239, acknowledge=true]
+
+145) StandardPackage [packageID = 1034, priority = HIGHT, status = BRANCH_TRANSPORT, senderAddress = 2-963212, destinationAddress = 4-925026, weight=7.9309401512146]
+
+146) SmallPackage [packageID = 1044, priority = LOW, status = BRANCH_TRANSPORT, senderAddress = 2-110040, destinationAddress = 4-336986, acknowledge=true]
+
+147) NonStandardPackage [packageID = 1012, priority = STANDARD, status = DELIVERED, senderAddress = 4-442931, destinationAddress = 4-245506, width=952, length=269, height=198]
+
