@@ -1,0 +1,48 @@
+-----------------------Personal Information------------------------
+
+Full Name: Roni Vituli
+Age: 25.0
+ID: 211546789
+Gender: זכר
+Group: מזרח
+
+-----------------Indices-----------------
+
+Creatinine:[Status: NORMAL, Value: 0.7]
+Urea:[Status: LOW, Value: 10]
+HDL:[Status: NORMAL, Value: 40]
+NEUT:[Status: NORMAL, Value: 50]
+RBC:[Status: NORMAL, Value: 5.0]
+HCT:[Status: NORMAL, Value: 40]
+WBC:[Status: NORMAL, Value: 6000]
+Hb:[Status: NORMAL, Value: 18.0]
+Iron:[Status: NORMAL, Value: 70]
+Lymph:[Status: NORMAL, Value: 50]
+AP:[Status: HIGHT, Value: 150]
+ 
+
+-----------------Diagnosis-----------------
+Disease: מחלת כבד
+Treatment: הפנייה לאבחנה ספציפית לצורך קביעת טיפול
+
+ 
+
+-----------------חששות-----------------
+Disease: תת תזונה
+Treatment: הפנייה לרופא המשפחה לצורך בדיקת התאמה בין התרופות
+
+Disease: מחלות בדרכי המרה
+Treatment: הפנייה לטיפול כירורגי
+
+Disease: תרופות שונות
+Treatment: לתאם פגישה עם תזונאי
+
+Disease: בלוטת התריס
+Treatment: Propylthiouracil להקטנת פעילות בלוטת התריס
+
+Disease: דיאטה
+Treatment: לתאם פגישה עם תזונאי
+
+
+-----------------------------------------------------------------------
+

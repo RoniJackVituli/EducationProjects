@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="673.0" prefWidth="1023.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.DiagController">
+   <children>
+      <ImageView fitHeight="682.0" fitWidth="1059.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Downloads/dia.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="164.0" layoutY="-24.0" prefHeight="78.0" prefWidth="227.0" text="אבחנה " underline="true">
+         <font>
+            <Font name="Aharoni Bold" size="85.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="myChoiceBoxPatient" layoutX="202.0" layoutY="86.0" prefWidth="150.0" />
+      <Label layoutX="223.0" layoutY="122.0" text="פרטי מטופל">
+         <font>
+            <Font name="Aharoni Bold" size="23.0" />
+         </font>
+      </Label>
+      <Button id="redline" defaultButton="true" layoutX="123.0" layoutY="83.0" mnemonicParsing="false" onAction="#DiagnosisOfPatient" prefHeight="25.0" prefWidth="69.0" stylesheets="@stylesheet.css" text="אבחן">
+         <font>
+            <Font name="Aharoni Bold" size="15.0" />
+         </font></Button>
+      <Button id="red" layoutX="218.0" layoutY="609.0" mnemonicParsing="false" onAction="#BackToMain" prefHeight="40.0" prefWidth="104.0" stylesheets="@stylesheet.css" text="חזרה לתפריט">
+         <font>
+            <Font name="Aharoni Bold" size="16.0" />
+         </font>
+      </Button>
+      <TextArea fx:id="YourTextArea1" layoutX="69.0" layoutY="159.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="152.0" prefWidth="416.0" />
+      <TextArea fx:id="YourTextArea2" layoutX="69.0" layoutY="356.0" prefHeight="240.0" prefWidth="416.0" />
+      <Label layoutX="245.0" layoutY="323.0" prefHeight="28.0" prefWidth="51.0" text="אבחון">
+         <font>
+            <Font name="Aharoni Bold" size="23.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
