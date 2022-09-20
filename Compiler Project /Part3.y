@@ -60,18 +60,19 @@ typedef struct environment {
 
 int how_many_main = 0;
 
-environment *create_environment(environment* aboveEnv, char returnType); 
+environment *create_environment(environment* aboveEnv, char returnType);
 function* create_function(char* name, char type, int num_of_para, char* paramertes);
 variable* create_var(char* name, char type);
 void put_var_node(environment* env, node *tree, node* Tree);
 //void check_var(environment* env, node* root, node* Tree, char type);
-char* create_new_p_for_str(char* src); 
-char get_type(char* type); 
+char* create_new_p_for_str(char* src);
+char get_type(char* type);
 char containing_P(char* type);
 char case_upper(char ch);
 int num_of_para(node* root);
-void put_para_node(environment* env, node *root, node* Tree); 
-char* para_rep(node *tree); 
+void put_para_node(environment* env, node *root, node* Tree);
+char* para_rep(node *tree);
+void welcome();
 
 void tree_is_ok(node* children ,environment* env, node* tree);
 void token_CODE(node* children ,environment* env, node* tree);
@@ -81,11 +82,11 @@ void token_BODY(node* children, environment* env, node* tree);
 void token_IF(node* children, environment* env, node* tree);
 void token_loop_WHILE(node* children, environment* env, node* tree);
 void token_PLACEMENT(node* children ,environment* env, node* tree);
-void semantics(node *tree); 
-void put_string_node(environment *env, node *root, node* Tree); 
-char type_of_var(environment* env, char* name); 
+void semantics(node *tree);
+void put_string_node(environment *env, node *root, node* Tree);
+char type_of_var(environment* env, char* name);
 char type_of_func(environment* env, char* name);
-char* type_parametrs(char* name, environment* env); 
+char* type_parametrs(char* name, environment* env);
 
 
 char check_any_pointer_int(node* childern, environment* env, node* tree);
@@ -97,10 +98,10 @@ char check_not(node* childern, environment* env, node *tree);
 char check_lengthSTR(node* childern, environment* env, node *tree);
 char check_pointer(node* childern, environment* env, node *tree);
 char check_address(node* childern, environment* env, node *tree);
-char what_the_expr(node* childern, environment* env, node *tree); 
+char what_the_expr(node* childern, environment* env, node *tree);
 
 
-void add_var_to_env(environment* env, variable* var); 
+void add_var_to_env(environment* env, variable* var);
 void add_func_to_env(environment* env, function* func);
 bool is_pointer(char name);
 bool type_of_return(node* children, environment *env, node* tree);
@@ -116,12 +117,12 @@ int func_arg_num(char* name, environment *env);
 
 /*--------Color print-------*/
 void red ();
-void purple(); 
+void purple();
 void reset();
 /*------------FUNCTION FREEs---------------*/
-void EXIT(node* root, environment* env); 
-void symboalTables_free(environment *env); 
-void symboalTable_free(environment *env); 
+void EXIT(node* root, environment* env);
+void symboalTables_free(environment *env);
+void symboalTable_free(environment *env);
 void treeFree(node* root);
 
 
@@ -184,7 +185,7 @@ s_3AC* build_3AC(node *tree, node* Tree);
     char *string;
     struct node *node;
 }
-%token <string> BOOL CHAR CHARP INT INTP REAL REALP STRING 
+%token <string> BOOL CHAR CHARP INT INTP REAL REALP STRING
 %token <string> IF ELSE WHILE FOR VAR ENDSTATEMENT RETURN NULLP VOID DO
 %token <string> PLUS MINUS DIV MUL PLACEMENT
 %token <string> AND EQ G GE L LE NOT NOTEQ OR ADR
@@ -192,10 +193,10 @@ s_3AC* build_3AC(node *tree, node* Tree);
 %token <string> OPE_BRA CLS_BRA OPE_BLOCK CLS_BLOCK OPE_ARRAY CLS_ARRAY PSIK
 
 
-%type <node> start s 
+%type <node> start s
 %type <node> all_function void_function parameters parameter variables ids body body_void definitions
-%type <node> val_p func_type var_type 
-%type <node> definition definition_var definition_str string_array 
+%type <node> val_p func_type var_type
+%type <node> definition definition_var definition_str string_array
 %type <node> body_with_return body_without_return stmt scop stmt_func_no conditions all_loops initialization update call_function senders return
 %type <node> ass hasma array string  pointer
 %type <node> expr
@@ -214,24 +215,24 @@ s_3AC* build_3AC(node *tree, node* Tree);
 %left G GE L LE
 %left PLUS MINUS
 %left MUL DIV
-%right ADR 
+%right ADR
 
 
 %%
 /*---------------------------------------start program--------------------------------------------------------------*/
 
-program: start {  semantics($1); /* printTree($1,0); */  build_3AC($1,$1); treeFree($1);}
+program: start {   welcome(); semantics($1);  /* printtree($1,0);*/   build_3AC($1,$1); treeFree($1);}
 
-start : s {$$ = mknode_one("CODE", $1); } 
+start : s {$$ = mknode_one("CODE", $1); }
       | start s { $$ = create_brothers("CODE",$1, mknode_one("CODE",$2)); }
 
 s : all_function   { $$ = $1;}
   | void_function  { $$ = $1;}
-    
+
 
 /*----------------------------------------Procedure And Functions---------------------------------------------------*/
 
-all_function: func_type ID OPE_BRA parameters CLS_BRA OPE_BLOCK body CLS_BLOCK  {$$ = mknode_four("FUNC",mknode_none($2),$4,mknode_one("RET ",$1),$7);} 
+all_function: func_type ID OPE_BRA parameters CLS_BRA OPE_BLOCK body CLS_BLOCK  {$$ = mknode_four("FUNC",mknode_none($2),$4,mknode_one("RET ",$1),$7);}
 
 
 func_type  : BOOL {$$ = mknode_none($1);} //y
@@ -241,14 +242,14 @@ func_type  : BOOL {$$ = mknode_none($1);} //y
            | INTP {$$ = mknode_none($1);} //y
            | CHARP {$$ = mknode_none($1);} //y
            | REALP {$$ = mknode_none($1);} //y
-         
+
 
 var_type   : BOOL {$$ = mknode_none($1);} //y
-           | CHAR {$$ = mknode_none($1);} //y   
-           | INT  {$$ = mknode_none($1);} //y 
-           | REAL {$$ = mknode_none($1);} //y 
+           | CHAR {$$ = mknode_none($1);} //y
+           | INT  {$$ = mknode_none($1);} //y
+           | REAL {$$ = mknode_none($1);} //y
            | INTP {$$ = mknode_none($1);} //y
-           | CHARP {$$ = mknode_none($1);} //y 
+           | CHARP {$$ = mknode_none($1);} //y
            | REALP {$$ = mknode_none($1);}//y
 
 
@@ -305,19 +306,19 @@ val_p:
     |HEX {$$ = mknode_one("int",mknode_none($1));}
     |EXP {$$ = mknode_one("real",mknode_none($1));}
     |NULLP {$$ = mknode_one("null",mknode_none("0"));}
-    
+
 
 operation:
     PLUS  { $$ = $1; }
     |MINUS{ $$ = $1; }
     |NOT  { $$ = $1; }
     |MUL { $$ = "POINTER";}
-    
 
-/*---------------------------------------Variable Declarations-----------------------------------------------------------*/ 
+
+/*---------------------------------------Variable Declarations-----------------------------------------------------------*/
 
 definition  : VAR var_type definition_var ENDSTATEMENT  {$$ = create_brothers("VAR", mknode_one("VAR",$2), $3);}
-            | STRING definition_str ENDSTATEMENT { $$ = $2; }    
+            | STRING definition_str ENDSTATEMENT { $$ = $2; }
 
 
 definition_var : ID PSIK definition_var  {$$ = create_brothers("VAR", mknode_one("VAR",mknode_none($1)), $3);}
@@ -346,7 +347,7 @@ body_without_return:
     |stmt body_without_return { $$ = create_brothers("Statments", mknode_one("stmt",$1),$2);}
     ;
 
-stmt:   
+stmt:
     ass ENDSTATEMENT { $$ = $1; }
     |scop  { $$ = $1; }
     |conditions { $$ = $1; }
@@ -364,13 +365,13 @@ ass:
     |pointer { $$ = $1; }
 
 hasma: ID PLACEMENT expr {$$ = mknode_two($2,mknode_none($1),$3); }
-    
+
 array: ID OPE_ARRAY expr CLS_ARRAY PLACEMENT expr{$$ = mknode_two($5,mknode_one($1,$3),$6);}
-    
+
 string: ID PLACEMENT STR {$$ = mknode_two($2,mknode_none($1),mknode_none($3));}
-    
+
 pointer: MUL ID PLACEMENT expr {$$ = mknode_two($3,mknode_one("POINTER",mknode_none($2)),$4);}
-    
+
 /*----------------------------------------Code Block--------------------------------------------------------------------*/
 
 scop : OPE_BLOCK stmt_func_no body_without_return CLS_BLOCK { $$ = create_brothers("BLOCK",$2, $3); }
@@ -391,7 +392,7 @@ conditions  : IF OPE_BRA expr CLS_BRA stmt %prec LOWER_THEN_ELSE {$$ = mknode_tw
 
 /*-----------------------------------------loops------------------------------------------------------------------------*/
 
-all_loops : WHILE OPE_BRA expr CLS_BRA stmt   {$$ = mknode_two("WHILE",$3 , $5);} 
+all_loops : WHILE OPE_BRA expr CLS_BRA stmt   {$$ = mknode_two("WHILE",$3 , $5);}
           | DO scop WHILE OPE_BRA expr CLS_BRA ENDSTATEMENT  {$$ =  mknode_two("DO-WHILE",$5, $2);}
           | FOR OPE_BRA initialization ENDSTATEMENT expr ENDSTATEMENT update CLS_BRA stmt {free($3->token); $3->token = strdup("INIT"); $$ = mknode_four("FOR",$3,mknode_one("COND",$5),$7, $9);}
 
@@ -432,7 +433,7 @@ expr:
     |expr GE expr    { $$ = mknode_two($2,$1,$3); }
     |expr L expr        { $$ = mknode_two($2,$1,$3); }
     |expr LE expr       { $$ = mknode_two($2,$1,$3); }
-    |operation expr %prec LEFT { $$ = mknode_one($1,$2);} 
+    |operation expr %prec LEFT { $$ = mknode_one($1,$2);}
     |val_p  { $$ = $1; }
     |ID { $$ = mknode_none($1);}
     |call_function { $$ = $1;}
@@ -443,7 +444,7 @@ expr:
     | ID OPE_ARRAY expr CLS_ARRAY  { $$ = mknode_one($1,$3); }
 
 
-epsilon: 
+epsilon:
 
 %%
 
@@ -456,7 +457,7 @@ int main(){
 int yyerror(){
   printf("in line: %d , ERROR %s\n",yylineno, yytext);
   return 0;
-}  
+}
 
 
 
@@ -608,7 +609,13 @@ void reset () {
   printf("\033[0m");
 }
 
-void semantics(node *tree) { 
+void welcome(){
+  purple();
+  printf("\n\n-----Welcome To Roni Jack Vituli Compiler-------\n---------This Project Write In 2021-----------\n\n");
+  reset();
+}
+
+void semantics(node *tree) {
     printf("-----CREATE-------\n");
     environment* env = create_environment(NULL, '\0');
     tree_is_ok(tree, env, tree);
@@ -711,11 +718,11 @@ char* para_rep(node *tree) {
 
 
 void put_var_node(environment* env, node *root, node* Tree) {
-    char type = get_type(root->childrens[0]->token); 
+    char type = get_type(root->childrens[0]->token);
     for (int i = 1; i < root->how_many_childrens; i++) {
         if (root->childrens[i]->childrens == NULL) {
             if (var_already_exsist(env, root->childrens[i]->token))
-                add_var_to_env(env, create_var(root->childrens[i]->token, type)); 
+                add_var_to_env(env, create_var(root->childrens[i]->token, type));
             else {
                 red();
                 printf("\n\n#######################Error#######################\n\n");
@@ -773,7 +780,7 @@ bool type_of_return(node* children, environment *env, node* tree) {
 
 
 bool have_return_type(environment* env){
-    return env->return_type == 'I'|| 
+    return env->return_type == 'I'||
     env->return_type == 'R' || env->return_type == 'C' || env->return_type == 'c' || env->return_type == 'r' || env->return_type == 'i' || env->return_type == 'b' || env->return_type == 'S';
 }
 
@@ -841,7 +848,7 @@ void put_string_node(environment *env, node* root, node* Tree) {
                 red();
                 printf("\n");
                 EXIT(root, env);
-            } 
+            }
             if (var_already_exsist(env, root->childrens[i]->token))
                 add_var_to_env(env, create_var(root->childrens[i]->token, type));
             else {
@@ -873,7 +880,7 @@ void tree_is_ok(node* children ,environment* env, node* tree) {
     if (strcmp(children->token, "FUNC") == 0) {
         token_FUNC(children ,env, tree);
     }
-   
+
     if (strcmp(children->token, "BLOCK") == 0) {
       token_BLOCK(children ,env, tree);
     }
@@ -904,8 +911,8 @@ void tree_is_ok(node* children ,environment* env, node* tree) {
         for (int i = 0; i < children->how_many_childrens; i++)
             tree_is_ok(children->childrens[i], env, tree);
     }
-    
- 
+
+
     if (strcmp(children->token, "INIT") == 0) {
         for (int i = 0; i < children->how_many_childrens; i++) {
             tree_is_ok(children->childrens[i], env, tree);
@@ -922,8 +929,8 @@ void tree_is_ok(node* children ,environment* env, node* tree) {
             printf("\n");
             EXIT(tree, env);
         }
-    }  
-  
+    }
+
     if (strcmp(children->token, "UPDATE") == 0) {
         for (int i = 0; i < children->how_many_childrens; i++) {
             tree_is_ok(children->childrens[i],env,tree);
@@ -981,7 +988,7 @@ void token_BODY(node* children, environment* env, node* tree){
 
 void token_loop_WHILE(node* children, environment* env, node* tree){
     if (what_the_expr(children->childrens[0], env, tree) != 'b') {
-        
+
         red();
         printf("\n\n#######################Error#######################\n\n");
         purple();
@@ -1065,10 +1072,10 @@ void token_FUNC(node* children, environment* env, node* tree){
         printf("\n");
         EXIT(tree, env);
     }
-       
+
     function* func = create_function(children->childrens[0]->token, get_type(children->childrens[2]->childrens[0]->token), num_of_para(children->childrens[1]), para_rep(children->childrens[1]));
     add_func_to_env(env, func);
-        
+
     environment *newEnv = create_environment(env, get_type(children->childrens[2]->childrens[0]->token));
     put_para_node(newEnv, (children->childrens[1]), tree);
     tree_is_ok(children->childrens[3], newEnv, tree);
@@ -1148,8 +1155,8 @@ void token_PLACEMENT(node* children ,environment* env, node* tree){
 
         if(type_of_var(env, children->childrens[0]->token) != 'S' && what_the_expr(children->childrens[1], env, tree) == 'n' && (type_of_var(env, children->childrens[0]->token)== 'C' || type_of_var(env, children->childrens[0]->token)=='R' || type_of_var(env, children->childrens[0]->token)=='I'))
             return;
-        
-        
+
+
 
         if(type_of_var(env, children->childrens[0]->token) == 'S'){
             if(children->childrens[1]->how_many_childrens == 0){
@@ -1191,7 +1198,7 @@ void token_PLACEMENT(node* children ,environment* env, node* tree){
             red();
             printf("\n");
             EXIT(tree, env);
-        }   
+        }
 }
 
 
@@ -1473,7 +1480,7 @@ char check_pointer(node* childern, environment* env, node *tree){
         if (typeLeft=='C')
             return 'c';
         if(typeLeft=='R')
-            return 'r';    
+            return 'r';
         if(typeLeft=='I'){
             return 'i';
         }else {
@@ -1490,14 +1497,14 @@ char check_address(node* childern, environment* env, node *tree){
             return 'C';
         }
         else if (typeLeft == 'i') {
- 
+
             return 'I';
         }
 
         else if (typeLeft == 'r') {
-         
+
             return 'R';
-        
+
         }else {
             red();
             printf("\n\n#######################Error#######################\n\n");
@@ -1523,7 +1530,7 @@ char what_the_expr(node* childern, environment* env, node *tree) {
         return check_bool_and_or(childern,env,tree);
     }
     if (strcmp("==", childern->token)==0 || strcmp("!=", childern->token)==0) {
-  
+
         return check_bool_eq_neq(childern,env,tree);
     }
     if (strcmp(">", childern->token)==0 || strcmp(">=", childern->token) ==0|| strcmp("<", childern->token) ==0 || strcmp("<=", childern->token)==0) {
@@ -1538,7 +1545,7 @@ char what_the_expr(node* childern, environment* env, node *tree) {
         return check_lengthSTR(childern,env,tree);
     }
 
-    
+
     if (strcmp("POINTER", childern->token)==0) {
         return check_pointer(childern,env,tree);
     }
@@ -1548,15 +1555,15 @@ char what_the_expr(node* childern, environment* env, node *tree) {
 
     }
 
-    
+
     if (strcmp("FUNC_CALL", childern->token)==0) {
         if (!check_node_function(childern, env)) {
             EXIT(tree, env);
         }
         return type_of_func(env, childern->childrens[0]->token);
-    
+
     }else {
-        if ((type_of_var(env, childern->token) == 'I'|| type_of_var(env, childern->token) == 'R' || type_of_var(env, childern->token) == 'C' || type_of_var(env, childern->token) == 'r' 
+        if ((type_of_var(env, childern->token) == 'I'|| type_of_var(env, childern->token) == 'R' || type_of_var(env, childern->token) == 'C' || type_of_var(env, childern->token) == 'r'
             || type_of_var(env, childern->token) == 'i' || type_of_var(env, childern->token) == 'c' || type_of_var(env, childern->token) == 'b')  || type_of_var(env, childern->token) == 'n'){
             if(childern->how_many_childrens!=0 && childern->childrens[0] != NULL  && !is_kind_of_type(childern->token)){
                 printf("Error: %s has no Index operator\n", childern->token);
@@ -1618,7 +1625,7 @@ bool check_node_function(node* tree, environment* env) {
             if(is_operation(tree->childrens[i]->token)){
                 what_the_expr(tree->childrens[i],env,tree);
             }
-            
+
             else if(!var_exsits_in_env(env, tree->childrens[i]->token)) {
                 red();
                 printf("\n\n#######################Error#######################\n\n");
@@ -1847,13 +1854,13 @@ s_3AC* FUNC_3AC(node* tree, node* Tree){
     char* end = "EndFunc\n\n";
     T_INDEX = 0;
     int size = strlen(str1) + strlen(str2) + strlen(begin) + strlen(end) + 1;
-    if(node == NULL){ 
+    if(node == NULL){
         printf("Error memory allocated FUNC 3AC\n");
         treeFree(Tree);
         exit(1);
     }
     node->code = (char*)malloc(sizeof(char)*size);
-    if(node == NULL){ 
+    if(node == NULL){
         printf("Error memory allocated FUNC 3AC\n");
         treeFree(Tree);
         exit(1);
@@ -1872,7 +1879,7 @@ s_3AC* BLOCK_3AC(node* tree, node* Tree){
     int i = 0;
     int size = 0;
     s_3AC* node = (s_3AC*)malloc(sizeof(s_3AC));
-    if(node == NULL){ 
+    if(node == NULL){
         printf("Error memory allocated BLOCK 3AC\n");
         treeFree(Tree);
         exit(1);
@@ -1888,7 +1895,7 @@ s_3AC* BLOCK_3AC(node* tree, node* Tree){
         if(i == 0){
             size = strlen(temp->code) + 1;
             node->code = (char*)malloc(sizeof(char) * size);
-            if( node->code == NULL){ 
+            if( node->code == NULL){
                 printf("Error memory allocated BLOCK 3AC\n");
                 treeFree(Tree);
                 exit(1);
@@ -1898,7 +1905,7 @@ s_3AC* BLOCK_3AC(node* tree, node* Tree){
         else{
             size = strlen(node->code) + strlen(temp->code) + 1;
             node->code = (char*)realloc(node->code, sizeof(char) * size);
-            if( node->code == NULL){ 
+            if( node->code == NULL){
                 printf("Error memory allocated BLOCK 3AC\n");
                 treeFree(Tree);
                 exit(1);
@@ -1917,7 +1924,7 @@ s_3AC* BODY_3AC(node* tree, node* Tree){
     int i = 0;
     int size = 0;
     s_3AC* node = (s_3AC*)malloc(sizeof(s_3AC));
-    if(node == NULL){ 
+    if(node == NULL){
         printf("Error memory allocated BODY 3AC\n");
         treeFree(Tree);
         exit(1);
@@ -1934,7 +1941,7 @@ s_3AC* BODY_3AC(node* tree, node* Tree){
         if(i == 0){
             size = strlen(temp->code) + 1;
             node->code = (char*)malloc(sizeof(char) * size);
-            if( node->code == NULL){ 
+            if( node->code == NULL){
                 printf("Error memory allocated BODY 3AC\n");
                 treeFree(Tree);
                 exit(1);
@@ -1945,7 +1952,7 @@ s_3AC* BODY_3AC(node* tree, node* Tree){
         else{
             size = strlen(node->code) + strlen(temp->code) + 1;
             node->code = (char*)realloc(node->code, sizeof(char) * size);
-            if( node->code == NULL){ 
+            if( node->code == NULL){
                 printf("Error memory allocated BODY 3AC\n");
                 treeFree(Tree);
                 exit(1);
@@ -1960,7 +1967,7 @@ s_3AC* BODY_3AC(node* tree, node* Tree){
 
 s_3AC* VAR_3AC(node* tree, node* Tree){
      s_3AC* node = (s_3AC*)malloc(sizeof(s_3AC) * 1);
-     if(node == NULL){ 
+     if(node == NULL){
             printf("Error memory allocated VAR 3AC\n");
             treeFree(Tree);
             exit(1);
@@ -2000,7 +2007,7 @@ s_3AC* VAR_3AC(node* tree, node* Tree){
 
 s_3AC* STRING_3AC(node* tree, node* Tree){
     s_3AC* node = (s_3AC*)malloc(sizeof(s_3AC) * 1);
-    if(node == NULL){ 
+    if(node == NULL){
         printf("Error memory allocated STRING 3AC\n");
         treeFree(Tree);
         exit(1);
@@ -2056,7 +2063,7 @@ s_3AC* IF_3AC(node* tree, node* Tree){
     char* label_one = num_of_label();
     s_3AC *expr = build_3AC(tree->childrens[1], Tree);
     char* label_two = num_of_label();
-    s_3AC* cond;  
+    s_3AC* cond;
     node* tempTree = tree->childrens[0];
     cond = complex_simple_cond(tempTree,label_one,label_two);
     s_3AC* node = (s_3AC*)malloc(sizeof(s_3AC) * 1);
@@ -2081,7 +2088,7 @@ s_3AC* IF_ELSE_3AC(node* tree, node* Tree){
     s_3AC* cond;
     node* tempTree = tree->childrens[0];
     cond = complex_simple_cond(tempTree,label_one,label_two);
-        
+
     s_3AC* node = (s_3AC*)malloc(sizeof(s_3AC));
     size = strlen(cond->code) + strlen(":") * 2 + strlen(label_one)  + strlen(expr_one->code) + strlen(expr_two->code) + strlen(label_two) + 1;
     node->code = (char*)malloc(sizeof(char) * size);
@@ -2170,7 +2177,7 @@ s_3AC* FOR_3AC(node* tree, node* Tree){
         s_3AC* node = (s_3AC*)malloc(sizeof(s_3AC));
         size = strlen(cond->code) + strlen("::\t\tgoto \n:") + strlen(label_three)  + strlen(expr_one->code)*2 + strlen(label_one) *2 + strlen(label_two) + 1 + strlen(expr_two->code) + strlen(expr_three->code);
         node->code = (char*)malloc(sizeof(char) * (size));
-        if( node->code == NULL){ 
+        if( node->code == NULL){
             printf("Error memory allocated FOR_3AC node->code\n");
             exit(1);
         }
@@ -2306,7 +2313,7 @@ s_3AC* EQ_3AC(node* tree, node* Tree){
         num = var_num();
         strcpy(var2, "t");
         strcat(var2, num);
-        
+
         size = strlen(tree->childrens[0]->token) + strlen(var) + strlen(" = &\n") + 1;
         code_one = (char*)malloc(sizeof(char) * (size));
         strcpy(code_one,var);
@@ -2338,7 +2345,7 @@ s_3AC* EQ_3AC(node* tree, node* Tree){
         strcat(node->code, code_two);
         strcat(node->code, code_three);
         return node;
-   
+
     }else{
         s_3AC *expr_one = what_the_expr3ac(tree->childrens[1]);
 
@@ -2361,52 +2368,52 @@ s_3AC* EQ_3AC(node* tree, node* Tree){
 }
 
 s_3AC* build_3AC(node *tree, node* Tree) {
- 
-    if (tree == NULL) 
+
+    if (tree == NULL)
         return NULL;
 
-    if (strcmp(tree->token, "CODE") == 0) 
+    if (strcmp(tree->token, "CODE") == 0)
         return CODE_3AC(tree,Tree);
 
-    if (strcmp(tree->token, "FUNC") == 0) 
+    if (strcmp(tree->token, "FUNC") == 0)
         return FUNC_3AC(tree,Tree);
 
-    if (strcmp(tree->token, "BLOCK") == 0) 
+    if (strcmp(tree->token, "BLOCK") == 0)
         return BLOCK_3AC(tree,Tree);
 
-    if (strcmp(tree->token, "BODY") == 0) 
+    if (strcmp(tree->token, "BODY") == 0)
         return BODY_3AC(tree, Tree);
 
-    if (strcmp(tree->token, "VAR") == 0) 
+    if (strcmp(tree->token, "VAR") == 0)
        return VAR_3AC(tree,Tree);
 
-    if (strcmp(tree->token, "STRING") == 0) 
+    if (strcmp(tree->token, "STRING") == 0)
         return STRING_3AC(tree,Tree);
 
-    if (strcmp(tree->token, "IF") == 0) 
+    if (strcmp(tree->token, "IF") == 0)
        return IF_3AC(tree,Tree);
 
-    if (strcmp(tree->token, "IF-ELSE") == 0) 
+    if (strcmp(tree->token, "IF-ELSE") == 0)
         return IF_ELSE_3AC(tree,Tree);
-    
+
     if (strcmp(tree->token, "WHILE") == 0)
         return WHILE_3AC(tree,Tree);
 
-    if (strcmp(tree->token, "DO-WHILE") == 0) 
+    if (strcmp(tree->token, "DO-WHILE") == 0)
         return DO_WHILE_3AC(tree,Tree);
 
-    if (strcmp(tree->token, "FOR") == 0) 
+    if (strcmp(tree->token, "FOR") == 0)
         return FOR_3AC(tree,Tree);
 
-    if (strcmp(tree->token, "INIT") == 0) 
-        return INIT_3AC(tree,Tree); 
+    if (strcmp(tree->token, "INIT") == 0)
+        return INIT_3AC(tree,Tree);
 
-    if (strcmp(tree->token, "UPDATE") == 0) 
+    if (strcmp(tree->token, "UPDATE") == 0)
         return UPDATE_3AC(tree,Tree);
 
-    if (strcmp(tree->token, "FUNC_CALL") == 0) 
+    if (strcmp(tree->token, "FUNC_CALL") == 0)
         return token_FUNC_CALL(tree);
-    
+
     if (strcmp(tree->token, "RET") == 0)
         return RET_3AC(tree,Tree);
 
@@ -2467,8 +2474,8 @@ s_3AC* complex_cond(node* tree, char* l1, char* l2){
     if(strcmp(tree->token, "||") == 0){
         s_3AC* left = complex_cond(tree->childrens[0], l1, l2);
         char* code = create_new_p_for_str("");
-        if(left != NULL && tree->childrens[0]->how_many_childrens != 0 
-            && strcmp(tree->childrens[0]->token,"&&")  
+        if(left != NULL && tree->childrens[0]->how_many_childrens != 0
+            && strcmp(tree->childrens[0]->token,"&&")
             && strcmp(tree->childrens[0]->token,"||")){
 
             int size = strlen(left->code) + strlen(l1) + strlen("if  Goto\n ") + 1;
@@ -2510,7 +2517,7 @@ s_3AC* complex_cond(node* tree, char* l1, char* l2){
         char* label = num_of_label();
         char* code = strdup("");
         if( left != NULL && tree->childrens[0]->how_many_childrens!=0
-            && strcmp(tree->childrens[0]->token,"&&") 
+            && strcmp(tree->childrens[0]->token,"&&")
             && strcmp(tree->childrens[0]->token,"||")){
             int size = strlen(left->code) + strlen(l2) + strlen("%sif  Goto \ngoto  \n") + 1;
             code = (char*)malloc(sizeof(char) * size);
@@ -2530,8 +2537,8 @@ s_3AC* complex_cond(node* tree, char* l1, char* l2){
 
         s_3AC* right = complex_cond(tree->childrens[1], l1, l2);
         char* code_two = create_new_p_for_str("");
-        if(right != NULL && tree->childrens[1]->how_many_childrens!=0 
-            && strcmp(tree->childrens[1]->token,"&&") 
+        if(right != NULL && tree->childrens[1]->how_many_childrens!=0
+            && strcmp(tree->childrens[1]->token,"&&")
             && strcmp(tree->childrens[1]->token,"||")){
             int size = strlen(right->code) + strlen(l2) + strlen("%sif  Goto \ngoto  \n") + strlen(label)+ 2 ;
             code_two = (char*)malloc(sizeof(char) * size);
@@ -2567,16 +2574,16 @@ s_3AC* token_OPERATION(node *tree){
     s_3AC* expr_one = what_the_expr3ac(tree->childrens[0]);
     int size = 0;
     char *label = var_num();
-    
+
     size = strlen(label) + 2;
     char *var = (char*)malloc(sizeof(char) * size);
-    if(var == NULL){ 
+    if(var == NULL){
         printf("Error memory allocated token_OPERATION var\n");
         exit(1);
     }
     size = strlen(label) + strlen(expr_one->var) + strlen(tree->token) + strlen(expr_two->var) + strlen("t = \n") + 1;
     char *code = (char*)malloc(sizeof(char) *size);
-    if(code == NULL){ 
+    if(code == NULL){
         printf("Error memory allocated token_OPERATION code\n");
         exit(1);
     }
@@ -2592,14 +2599,14 @@ s_3AC* token_OPERATION(node *tree){
 
 
     s_3AC* node = (s_3AC*)malloc(sizeof(s_3AC));
-    if(node == NULL){ 
+    if(node == NULL){
         printf("Error memory allocated token_OPERATION node\n");
         exit(1);
     }
     if(tree->childrens[0]->how_many_childrens!=0 && tree->childrens[1]->how_many_childrens!=0){
         size = strlen(code) + strlen(expr_one->code) + strlen(expr_two->code) + 1;
         node->code = (char*)malloc(sizeof(char) * size);
-         if(node->code == NULL){ 
+         if(node->code == NULL){
             printf("Error memory allocated token_OPERATION if->1\n");
             exit(1);
         }
@@ -2609,7 +2616,7 @@ s_3AC* token_OPERATION(node *tree){
     }if(tree->childrens[0]->how_many_childrens!=0){
         size = strlen(code) + strlen(expr_one->code) + 1;
         node->code = (char*)malloc(sizeof(char) * size);
-        if(node->code == NULL){ 
+        if(node->code == NULL){
             printf("Error memory allocated token_OPERATION if->2\n");
             exit(1);
         }
@@ -2618,7 +2625,7 @@ s_3AC* token_OPERATION(node *tree){
     }if(tree->childrens[1]->how_many_childrens!=0){
         size = strlen(code) + strlen(expr_two->code) + strlen(expr_one->code) + 1;
         node->code = (char*)malloc(sizeof(char) * size);
-        if(node->code == NULL){ 
+        if(node->code == NULL){
             printf("Error memory allocated token_OPERATION if->3\n");
             exit(1);
         }
@@ -2639,17 +2646,17 @@ s_3AC* token_NOT(node *tree){
 
     int size = strlen(num) + 2;
     char *var = (char*)malloc(sizeof(char) *size);
-    if(var == NULL){ 
+    if(var == NULL){
         printf("Error memory allocated token_NOT var\n");
         exit(1);
     }
 
     size = strlen(num) + strlen(expr_one->var) + strlen("t = !\n") + 1;
     char *code = (char*)malloc(sizeof(char) * size);
-    if(code == NULL){ 
+    if(code == NULL){
         printf("Error memory allocated token_NOT code\n");
         exit(1);
-    }  
+    }
     strcpy(var, "t");
     strcat(var, num);
     strcpy(code,"");
@@ -2657,16 +2664,16 @@ s_3AC* token_NOT(node *tree){
     strcat(code, " = !");
     strcat(code, expr_one->var);
     strcat(code, "\n");
-    
+
     s_3AC* node = (s_3AC*)malloc(sizeof(s_3AC));
-    if(node == NULL){ 
+    if(node == NULL){
         printf("Error memory allocated token_NOT node\n");
         exit(1);
     }
     if(tree->childrens[0]->how_many_childrens!=0){
         size = strlen(code) + strlen(expr_one->code) + 1;
         node->code = (char*)malloc(sizeof(char) * size);
-        if(node->code == NULL){ 
+        if(node->code == NULL){
             printf("Error memory allocated token_NOT if->1\n");
             exit(1);
         }
@@ -2684,14 +2691,14 @@ s_3AC* token_POINTER(node* tree){
     char *num = var_num();
     int size = strlen(num) + 2;
     char *var = (char*)malloc(sizeof(char) * size);
-    if(var == NULL){ 
+    if(var == NULL){
         printf("Error memory allocated token_POINTER var\n");
         exit(1);
     }
 
     size = strlen(num) + strlen(expr_one->var) + strlen("t = *\n") + 1;
     char *code = (char*)malloc(sizeof(char) * size);
-    if(code == NULL){ 
+    if(code == NULL){
         printf("Error memory allocated token_POINTER code\n");
         exit(1);
     }
@@ -2704,7 +2711,7 @@ s_3AC* token_POINTER(node* tree){
     strcat(code, "\n");
 
     s_3AC* node = (s_3AC*)malloc(sizeof(s_3AC));
-    if(node == NULL){ 
+    if(node == NULL){
         printf("Error memory allocated token_OPERATION if->1\n");
         exit(1);
     }
@@ -2712,7 +2719,7 @@ s_3AC* token_POINTER(node* tree){
     if(tree->childrens[0]->how_many_childrens!=0){
         size = strlen(code) + strlen(expr_one->code) + 1;
         node->code = (char*)malloc(sizeof(char) * size);
-        if(node->code == NULL){ 
+        if(node->code == NULL){
             printf("Error memory allocated token_OPERATION if->1\n");
             exit(1);
         }
@@ -2728,17 +2735,17 @@ s_3AC* token_POINTER(node* tree){
 s_3AC* token_LENGTH(node* tree){
     s_3AC* expr_one = what_the_expr3ac(tree->childrens[0]);
     char* num = var_num();
-    
+
     int size = strlen(num) + 2;
     char* var = (char*)malloc(sizeof(char)*size );
-    if(var == NULL){ 
+    if(var == NULL){
         printf("Error memory allocated token_LENGTH var\n");
         exit(1);
     }
 
     size = strlen(num) + strlen(expr_one->var) + strlen("t = ||\n") + 1;
     char* code = (char*)malloc(sizeof(char)*size);
-    if(code == NULL){ 
+    if(code == NULL){
         printf("Error memory allocated token_LENGTH code\n");
         exit(1);
     }
@@ -2751,7 +2758,7 @@ s_3AC* token_LENGTH(node* tree){
     strcat(code,"\n");
 
     s_3AC* node = (s_3AC*)malloc(sizeof(s_3AC));
-    if(node == NULL){ 
+    if(node == NULL){
         printf("Error memory allocated token_NOT node\n");
         exit(1);
     }
@@ -2765,13 +2772,13 @@ s_3AC* token_ADR(node* tree){
     char *num = var_num();
     int size = strlen(num) + 2;
     char *var = (char*)malloc(sizeof(char) * size);
-    if(var == NULL){ 
+    if(var == NULL){
         printf("Error memory allocated token_ADR var\n");
         exit(1);
     }
     size = strlen(num) + strlen(expr_one->var) + strlen("t = &\n") + 1;
     char *code = (char*)malloc(sizeof(char) * size);
-    if(code == NULL){ 
+    if(code == NULL){
         printf("Error memory allocated token_ADR code\n");
         exit(1);
     }
@@ -2783,7 +2790,7 @@ s_3AC* token_ADR(node* tree){
     strcat(code, "\n");
 
     s_3AC* node = (s_3AC*)malloc(sizeof(s_3AC) * 1);
-    if(node == NULL){ 
+    if(node == NULL){
         printf("Error memory allocated token_ADR node\n");
         exit(1);
     }
@@ -2791,7 +2798,7 @@ s_3AC* token_ADR(node* tree){
     if(tree->childrens[0]->how_many_childrens!=0){
         size = strlen(code) + strlen(expr_one->code) + 1;
         node->code = (char*)malloc(sizeof(char) * size);
-        if(node->code == NULL){ 
+        if(node->code == NULL){
             printf("Error memory allocated token_ADR if->1\n");
             exit(1);
         }
@@ -2806,7 +2813,7 @@ s_3AC* token_ADR(node* tree){
 
 s_3AC* token_FUNC_CALL(node* tree){
     s_3AC* node = (s_3AC*)malloc(sizeof(s_3AC));
-    if(node == NULL){ 
+    if(node == NULL){
         printf("Error memory allocated token_FUNC_CALL node\n");
         exit(1);
     }
@@ -2821,18 +2828,18 @@ s_3AC* token_FUNC_CALL(node* tree){
             if(i == 1){
                 size = strlen(expr_one->code) + 1;
                 node->code = (char*)malloc(sizeof(char) * size);
-                if(node->code == NULL){ 
+                if(node->code == NULL){
                     printf("Error memory allocated token_FUNC_CALL node->code malloc\n");
                     exit(1);
                 }
                 strcpy(node->code ,expr_one->code);
                 flag = true;
-           
+
             }else{
 
                 size = strlen(node->code) + strlen(expr_one->code) + 1;
                 node->code = (char*)realloc(node->code, sizeof(char) * size);
-                if(node->code == NULL){ 
+                if(node->code == NULL){
                     printf("Error memory allocated token_FUNC_CALL node->code realloc\n");
                     exit(1);
                 }
@@ -2842,14 +2849,14 @@ s_3AC* token_FUNC_CALL(node* tree){
         if(i == 1 && flag == false ){
             size = strlen(expr_one->var) + strlen("PushParam \n") + 1;
             node->code = (char*)malloc(sizeof(char) * size);
-            if(node->code == NULL){ 
+            if(node->code == NULL){
                 printf("Error memory allocated token_FUNC_CALL node->code malloc  if i == 1\n");
                 exit(1);
             }
         }else{
             size = strlen(node->code) + strlen(expr_one->var) + strlen("PushParam \n") + 1;
             node->code = (char*)realloc(node->code, sizeof(char) * size);
-            if(node->code == NULL){ 
+            if(node->code == NULL){
                 printf("Error memory allocated token_FUNC_CALL node->code realloc if i == 1\n");
                 exit(1);
             }
@@ -2857,21 +2864,21 @@ s_3AC* token_FUNC_CALL(node* tree){
 
         strcat(node->code, "PushParam ");
         strcat(node->code, expr_one->var);
-        strcat(node->code,"\n");     
-        i++;   
+        strcat(node->code,"\n");
+        i++;
     }
 
     char *num = var_num();
     size = strlen(num) + 2;
     char *var = (char*)malloc(sizeof(char) * size);
-    if(var == NULL){ 
+    if(var == NULL){
         printf("Error memory allocated token_FUNC_CALL var\n");
         exit(1);
     }
 
     size = strlen(num) + strlen(tree->childrens[0]->token) + strlen("t = LCall \n") + 1;
     char *code = (char*)malloc(sizeof(char) * size);
-    if(code == NULL){ 
+    if(code == NULL){
         printf("Error memory allocated token_FUNC_CALL code\n");
         exit(1);
     }
@@ -2883,12 +2890,12 @@ s_3AC* token_FUNC_CALL(node* tree){
     strcat(code, "LCall ");
     strcat(code, tree->childrens[0]->token);
     strcat(code, "\n");
-    
+
 
     node->var = create_new_p_for_str(var);
     size = strlen(node->code) + strlen(code) + 1;
     node->code = (char*)realloc(node->code, sizeof(char) * size);
-    if(node->code == NULL){ 
+    if(node->code == NULL){
         printf("Error memory allocated token_FUNC_CALL node->code\n");
         exit(1);
     }
@@ -2897,22 +2904,22 @@ s_3AC* token_FUNC_CALL(node* tree){
     free(code);
     size = strlen(num) + strlen(tree->childrens[0]->token) + strlen("PopParams 0\n") + 1;
     code = (char*)malloc(sizeof(char) * size);
-    if(code == NULL){ 
+    if(code == NULL){
         printf("Error memory allocated token_FUNC_CALL code after free\n");
         exit(1);
     }
     char* byte = (char*)malloc(sizeof(char) * 50);
-    if(byte == NULL){ 
+    if(byte == NULL){
         printf("Error memory allocated token_FUNC_CALL byte\n");
         exit(1);
     }
     sprintf(byte, "%d", CALC_BYTES);
     strcpy(code,"PopParams ");
-    strcat(code, byte); 
+    strcat(code, byte);
     strcat(code, "\n");
     size = strlen(node->code) + strlen(code) + 1;
     node->code = (char*)realloc(node->code, sizeof(char) * size);
-    if(node->code == NULL){ 
+    if(node->code == NULL){
         printf("Error memory allocated token_FUNC_CALL node->code last\n");
         exit(1);
     }
@@ -2930,7 +2937,7 @@ s_3AC* token_VAR_OR_CONST(node* tree){
         num = var_num();
         size = strlen(num) + 2;
         var = (char*)malloc(sizeof(char) * size);
-        if(var == NULL){ 
+        if(var == NULL){
             printf("Error memory allocated token_VAR_OR_CONST var if->1\n");
             exit(1);
         }
@@ -2939,7 +2946,7 @@ s_3AC* token_VAR_OR_CONST(node* tree){
 
         size = strlen(num) + strlen(tree->childrens[0]->token) + strlen("t = \n") + 1;
         code = (char*)malloc(sizeof(char) * size);
-        if(code == NULL){ 
+        if(code == NULL){
             printf("Error memory allocated token_VAR_OR_CONST code if->1\n");
             exit(1);
         }
@@ -2949,7 +2956,7 @@ s_3AC* token_VAR_OR_CONST(node* tree){
         strcat(code, "\n");
 
         s_3AC* node = (s_3AC*)malloc(sizeof(s_3AC));
-        if(node == NULL){ 
+        if(node == NULL){
             printf("Error memory allocated token_VAR_OR_CONST node if->1\n");
             exit(1);
         }
@@ -2962,7 +2969,7 @@ s_3AC* token_VAR_OR_CONST(node* tree){
         num = var_num();
         size = strlen(num) + 2;
         var = (char*)malloc(sizeof(char) * size);
-        if(var == NULL){ 
+        if(var == NULL){
             printf("Error memory allocated token_VAR_OR_CONST var if->2\n");
             exit(1);
         }
@@ -2971,7 +2978,7 @@ s_3AC* token_VAR_OR_CONST(node* tree){
 
         size = strlen(num) + strlen(tree->token) + strlen("t = &\n") + 1;
         code = (char*)malloc(sizeof(char) * size);
-        if(code == NULL){ 
+        if(code == NULL){
             printf("Error memory allocated token_VAR_OR_CONST code if->2\n");
             exit(1);
         }
@@ -2983,7 +2990,7 @@ s_3AC* token_VAR_OR_CONST(node* tree){
         char *num2 = var_num();
         size = strlen(num2) + 2;
         char *var2 = (char*)malloc(sizeof(char) * size);
-        if(var2 == NULL){ 
+        if(var2 == NULL){
             printf("Error memory allocated token_VAR_OR_CONST var2 if->2\n");
             exit(1);
         }
@@ -2992,7 +2999,7 @@ s_3AC* token_VAR_OR_CONST(node* tree){
 
         size = strlen(num2) + strlen(tree->childrens[0]->childrens[0]->token) + strlen(var) + strlen("t = +\n") + 1;
         char *code_two = (char*)malloc(sizeof(char) * size);
-        if(code_two == NULL){ 
+        if(code_two == NULL){
             printf("Error memory allocated token_VAR_OR_CONST code_two if->2\n");
             exit(1);
         }
@@ -3004,13 +3011,13 @@ s_3AC* token_VAR_OR_CONST(node* tree){
         strcat(code_two, "\n");
 
         s_3AC* node = (s_3AC*)malloc(sizeof(s_3AC) * 2);
-        if(node == NULL){ 
+        if(node == NULL){
             printf("Error memory allocated token_VAR_OR_CONST node if->2\n");
             exit(1);
         }
         size = strlen(code) + strlen(code_two) + 1;
         node->code = (char*)malloc(sizeof(char) * size);
-        if(node->code == NULL){ 
+        if(node->code == NULL){
             printf("Error memory allocated token_VAR_OR_CONST  node->code if->1\n");
             exit(1);
         }
@@ -3031,23 +3038,23 @@ s_3AC* what_the_expr3ac(node *tree){
    if (strcmp("+", tree->token) == 0 || strcmp("-", tree->token) == 0 || strcmp("*", tree->token)  == 0 || strcmp("/", tree->token) == 0) {
         return token_OPERATION(tree);
     }
-    
-    if (strcmp("!", tree->token) == 0) 
+
+    if (strcmp("!", tree->token) == 0)
        return token_NOT(tree);
 
     if (strcmp("POINTER", tree->token) == 0)
         return token_POINTER(tree);
 
-    if (strcmp("LENGTH", tree->token) == 0) 
+    if (strcmp("LENGTH", tree->token) == 0)
         return token_LENGTH(tree);
-    
-    if (strcmp("ADR", tree->token) == 0) 
+
+    if (strcmp("ADR", tree->token) == 0)
         return token_ADR(tree);
 
-    if (strcmp("FUNC_CALL", tree->token) == 0) 
+    if (strcmp("FUNC_CALL", tree->token) == 0)
         return token_FUNC_CALL(tree);
-       
-    else 
+
+    else
 
         return token_VAR_OR_CONST(tree);
 }
@@ -3062,7 +3069,7 @@ char* createTabs(char* node){
         sizeOfcode++;
         if(node[i] == '\n')
             countEnter++;
-    } 
+    }
     int j = 0 ;
     temp = (char*)malloc(sizeof(char)*(sizeOfcode + countEnter*2 + 1));
     temp[j++] = '\t';
@@ -3154,7 +3161,7 @@ s_3AC* cond3AC(node *tree){
 
 char* var_num(){
     char *str = (char*)malloc(sizeof(char) * 12 );
-    if(str == NULL){ 
+    if(str == NULL){
         printf("Error memory allocated var_num str\n");
         exit(1);
     }
@@ -3166,7 +3173,7 @@ char* var_num(){
 
 char* num_of_label(){
     char *str = (char*)malloc(sizeof(char) * 13 );
-    if(str == NULL){ 
+    if(str == NULL){
         printf("Error memory allocated num_of_label str\n");
         exit(1);
     }
@@ -3186,6 +3193,3 @@ void bytes(char* token){
     if(strcmp("real", token) == 0)
        CALC_BYTES += 8;
 }
-
-
-
