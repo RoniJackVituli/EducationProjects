@@ -10,6 +10,11 @@ A compiler for a simple language similar to c language. Written in Lex, Yacc, C.
 2. Syntax analysis.
 3. Three address code (3AC) generation.
 
+## Video
+
+
+https://user-images.githubusercontent.com/100803621/191198051-9e788d2e-6933-40f8-bd04-7559594b4227.mov
+
 
 ## TestFile
 
