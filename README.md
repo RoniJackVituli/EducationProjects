@@ -23,10 +23,10 @@ in this respositorie will find all my Homework \ Project i did in during my bach
 | Project | README |
 | ------ | ------ |
 | Estudy-sce | [estudy-sce/README.md][PlDb] 
-| Compiler Lan | [Language.pdf][Plso]
+| Compiler Lan | [Language][Plso]
 | Courier Company | [Courier-Company][Plcc]
 
    [PlDb]: <https://github.com/Project-Management-SCE/estudy-sce-web>
-   [Plso]: <https://github.com/RoniJack/EducationProjects/blob/main/Compiler%20Project%20/Language.pdf>  
+   [Plso]: <https://github.com/RoniJack/EducationProjects/tree/main/Compiler%20Project%20>  
    [Plcc]: <https://github.com/RoniJack/CourierCompany>
    
