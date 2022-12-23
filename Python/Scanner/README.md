@@ -1,7 +1,6 @@
 # The Author's 
 
-* Daniel Dahan - 208906909
-* Roni Jack Vituli - 315369967
+* Roni Jack Vituli
 
 # Environment
 Windows / Mac , Python Language Need a python on computer and the IDE we work is PyCharm.
