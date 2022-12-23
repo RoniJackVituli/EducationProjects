@@ -29,3 +29,14 @@ To run this program, you will need to have Python and the above libraries instal
 Replace ```path/to/hhd_dataset``` with the actual path to the Hindi Handwritten Digits dataset on your machine.
 The program will then preprocess the images, split them into training, validation, and testing sets, train and evaluate the k-NN classifier, and report the results in the "results.txt" and "confusion.matrix.csv" files.
 
+to get the hhd_dataset please enter to this link and download.
+
+```
+https://drive.google.com/file/d/1G7q2R4tLUlViQQLjgX1U2g-k5-aWz_Kn/view?usp=share_link
+```
+
+
+# References 
+
+[I. Rabaev, B. Kurar Barakat, A. Churkin and J. El-Sana. The HHD Dataset. The 17 th International Conference on Frontiers in Handwriting
+Recognition, pp. 228-233, 2020.](https://www.researchgate.net/publication/343880780_The_HHD_Dataset)
