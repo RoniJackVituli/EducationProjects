@@ -26,6 +26,6 @@ To run this program, you will need to have Python and the above libraries instal
 ```bash 
    python knn_classifier.py path/to/hhd_dataset
 ```
-Replace path/to/hhd_dataset with the actual path to the Hindi Handwritten Digits dataset on your machine.
+Replace ```path/to/hhd_dataset``` with the actual path to the Hindi Handwritten Digits dataset on your machine.
 The program will then preprocess the images, split them into training, validation, and testing sets, train and evaluate the k-NN classifier, and report the results in the "results.txt" and "confusion.matrix.csv" files.
 
