@@ -1,6 +1,5 @@
 # Authors' Contact Information
-* Roni Jack Vituli - 315369967
-* Daniel Dahan - 208906909
+* Roni Jack Vituli 
 
 # Description
 
