@@ -11,13 +11,19 @@ Finally, the classifier is used to classify the images in the testing set and th
 
 
 # Environment
-OS: This program was developed and tested on a machine running Windows 10 and Python 3.8. It requires the following libraries:
-* opencv-python
-* numpy
-* scikit-learn
+This program was developed and tested on a Windows 10 operating system. It requires Python 3.x and the following libraries:
+* OpenCV
+* Scikit-learn
 
-#How to Run the Program
-To run this program, you will need to have Python and the above libraries installed. Then, follow these steps:
+
+To install the required libraries, you can use the following command:
+
+```sh
+pip install opencv-python scikit-learn
+```
+
+# How to Run the Program
+To run the program, use the following command:
 
 1. Open a terminal or command prompt.
 2. Navigate to the directory where the program and dataset are located.
@@ -33,7 +39,7 @@ to get the hhd_dataset please enter to this link and download.
 ```
 https://drive.google.com/file/d/1G7q2R4tLUlViQQLjgX1U2g-k5-aWz_Kn/view?usp=share_link
 ```
-
+The program will preprocess the images in the dataset, split them into training, validation, and testing sets, train a k-NN classifier, evaluate its performance on the validation set, and select the optimal value of k. It will then evaluate the classifier's performance on the testing set and generate a confusion matrix. The results will be written to a file named results.txt and the confusion matrix will be written to a file named confusion.matrix.csv.
 
 # References 
 
